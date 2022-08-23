@@ -51,7 +51,7 @@ typedef __SIZE_TYPE__ size_t;
 
 ## void *를 unsigned char *로 캐스팅하는 이유
 
-> [`ft_memset`](./ft_memset.c) [`ft_memcpy`](./ft_memcpy.c) [`ft_memmove`](./ft_memmove.c) [`ft_memchr`](./ft_memchr.c) [`ft_memcmp`](./ft_memcmp.c)
+> [`ft_memset`](./src/string/ft_memset.c) [`ft_memcpy`](./src/string/ft_memcpy.c) [`ft_memmove`](./src/string/ft_memmove.c) [`ft_memchr`](./src/string/ft_memchr.c) [`ft_memcmp`](./src/string/ft_memcmp.c)
 
 `void *`의 직접적인 연산은 컴파일러에 따라 가능 여부가 달라지기 때문에 호환성을 고려한다면 피하는 것이 바람직하다.  
 위의 함수들은 메모리에 최소 단위인 1바이트 단위로 접근하여 연산을 수행하기 때문에 `char *` 또는 `unsigned char *`로 캐스팅해야 하는데,  
@@ -64,7 +64,7 @@ typedef __SIZE_TYPE__ size_t;
 
 ## write 시스템 콜의 partial write 이슈
 
-> [`ft_putstr_fd`](./ft_putstr_fd.c)
+> [`ft_putstr_fd`](./src/stdio/ft_putstr_fd.c)
 
 일반적인 파일의 경우 `write` 시스템 콜에서 partial write가 발생할 가능성이 매우 낮기 때문에,  
 굳이 루프를 통해 반복적으로 `write`를 호출하지 않아도 쓰기 작업을 안전하게 보장받을 수 있다.  
@@ -89,7 +89,7 @@ re:
 
 ## 연결 리스트에서 이중 포인터를 사용하는 이유
 
-> [`ft_lstadd_front`](./ft_lstadd_front.c) [`ft_lstadd_back`](./ft_lstadd_back.c) [`ft_lstclear`](./ft_lstclear.c)
+> [`ft_lstadd_front`](./src/list/ft_lstadd_front.c) [`ft_lstadd_back`](./src/list/ft_lstadd_back.c) [`ft_lstclear`](./src/list/ft_lstclear.c)
 
 위의 세 함수에는 다른 연결 리스트 관련 함수들과 달리 `*lst`의 값, 즉 연결 리스트의 head 주소를 변경하는 코드가 존재한다.  
 호출한 함수에서 변수의 원래 값을 변경하고자 할 때 변수의 주소값을 인자로 전달한 뒤 호출한 함수 내부에서 포인터를 이용하는 것과 마찬가지로,  
