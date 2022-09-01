@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:18:29 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/23 05:23:02 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/02 00:44:58 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,15 @@ char	*ft_itoa(int n)
 	str = ft_calloc(len + 1, sizeof(char));
 	if (!str)
 		return (NULL);
-	if (n < 0)
-		*str = '-';
 	abs = (long long)n * ((n > 0) - (n < 0));
 	while (abs)
 	{
 		str[--len] = abs % 10 + '0';
 		abs /= 10;
 	}
+	if (n < 0)
+		str[0] = '-';
+	else if (n == 0)
+		str[0] = '0';
 	return (str);
 }
