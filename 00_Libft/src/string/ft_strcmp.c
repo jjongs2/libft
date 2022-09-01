@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ctype.h                                         :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/23 09:29:35 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/01 01:04:41 by kijsong          ###   ########.fr       */
+/*   Created: 2022/09/01 01:50:32 by kijsong           #+#    #+#             */
+/*   Updated: 2022/09/01 01:56:06 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CTYPE_H
-# define FT_CTYPE_H
-
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isascii(int c);
-int		ft_isblank(int c);
-int		ft_isdigit(int c);
-int		ft_islower(int c);
-int		ft_isprint(int c);
-int		ft_isspace(int c);
-int		ft_isupper(int c);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
-
-#endif
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	while (*s1 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return (*(const unsigned char *)s1 - *(const unsigned char *)s2);
+}
