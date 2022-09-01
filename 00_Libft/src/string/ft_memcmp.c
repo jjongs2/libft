@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:59:28 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/01 23:50:11 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/01 01:33:21 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	p1 = s1;
 	p2 = s2;
-	while (n--)
+	while (n && *p1 == *p2)
 	{
-		if (*p1 != *p2)
-			return (*p1 - *p2);
+		n--;
 		p1++;
 		p2++;
 	}
-	return (0);
+	if (!n)
+		return (0);
+	return (*p1 - *p2);
 }

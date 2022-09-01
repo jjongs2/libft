@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:20:50 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/02 01:07:43 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/01 02:21:28 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (1)
-	{
-		if (*(const unsigned char *)s == (unsigned char)c)
-			return ((char *)s);
-		if (!*s)
-			break ;
-		s++;
-	}
-	return (NULL);
+	const unsigned char	*p;
+
+	c = (unsigned char)c;
+	p = (const unsigned char *)s;
+	while (*p && *p != c)
+		p++;
+	if (*p != c)
+		return (NULL);
+	return ((char *)p);
 }
