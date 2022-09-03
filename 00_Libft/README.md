@@ -54,7 +54,8 @@ typedef __SIZE_TYPE__ size_t;
 
 > [`ft_memset`](./src/string/ft_memset.c) [`ft_memcpy`](./src/string/ft_memcpy.c) [`ft_memmove`](./src/string/ft_memmove.c) [`ft_memchr`](./src/string/ft_memchr.c) [`ft_memcmp`](./src/string/ft_memcmp.c)
 
-`void *`의 직접적인 연산은 컴파일러에 따라 가능 여부가 달라지기 때문에 호환성을 고려한다면 피하는 것이 바람직하다.  
+`void *`를 역참조하는 것은 자료형이 정해지지 않았기 때문에 불가능하며,  
+`void *`의 직접적인 연산은 컴파일러에 따라 가능 여부가 달라지므로 호환성을 고려한다면 피하는 것이 바람직하다.  
 위의 함수들은 메모리에 최소 단위인 1바이트 단위로 접근하여 연산을 수행하기 때문에 `char *` 또는 `unsigned char *`로 캐스팅해야 하는데,  
 이 중에서도 1바이트를 구성하는 비트 중 다른 용도로 사용되는 비트 없이 모든 비트를 온전하게 확인할 수 있는 `unsigned char` 자료형을 이용한다.
 
