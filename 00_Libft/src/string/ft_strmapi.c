@@ -6,17 +6,17 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:18:39 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/09 01:53:22 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/09 02:09:08 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_string.h"
 #include "../../include/ft_stdlib.h"
 
-char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(const char *s, char (*f)(size_t, char))
 {
 	char			*map;
-	unsigned int	i;
+	size_t	i;
 
 	if (!s || !f)
 		return (NULL);

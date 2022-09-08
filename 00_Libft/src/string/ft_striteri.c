@@ -6,13 +6,13 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:18:46 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/02 02:56:27 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/09 02:09:08 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_striteri(char *s, void (*f)(size_t, char *))
 {
-	unsigned int	i;
+	size_t	i;
 
 	if (!s || !f)
 		return ;
