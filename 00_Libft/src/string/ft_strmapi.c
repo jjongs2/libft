@@ -6,14 +6,14 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:18:39 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/23 05:26:47 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/09 01:53:22 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_string.h"
-#include "../../include/ft_malloc.h"
+#include "../../include/ft_stdlib.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
 	char			*map;
 	unsigned int	i;

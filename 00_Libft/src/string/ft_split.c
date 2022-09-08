@@ -6,14 +6,14 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:16:30 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/23 05:24:51 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/09 01:53:22 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_malloc.h"
+#include "../../include/ft_stdlib.h"
 #include "../../include/ft_string.h"
 
-static size_t	ft_wordcnt(char const *s, char c)
+static size_t	ft_wordcnt(const char *s, char c)
 {
 	size_t	cnt;
 
@@ -39,7 +39,7 @@ static char	**ft_wordclr(char **split, size_t i)
 	return (NULL);
 }
 
-static char	**ft_wordgen(char const *s, char c, size_t cnt, char **split)
+static char	**ft_wordgen(const char *s, char c, size_t cnt, char **split)
 {
 	size_t	i;
 	char	*p;
@@ -61,7 +61,7 @@ static char	**ft_wordgen(char const *s, char c, size_t cnt, char **split)
 	return (split);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	size_t	cnt;
 	char	**split;

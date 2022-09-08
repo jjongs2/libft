@@ -6,12 +6,12 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 09:30:25 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/23 20:52:24 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/09 01:46:35 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_list.h"
-#include "../../include/ft_malloc.h"
+#include "../../include/ft_stdlib.h"
 
 t_list	*ft_lstnew(void *content)
 {

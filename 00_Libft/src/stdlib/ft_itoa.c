@@ -6,11 +6,11 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:18:29 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/02 00:44:58 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/09 01:46:35 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_malloc.h"
+#include "../../include/ft_stdlib.h"
 
 static int	ft_nbrlen(int n)
 {

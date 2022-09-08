@@ -6,13 +6,13 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 10:34:06 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/23 05:28:54 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/09 01:53:22 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_string.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	size_t	len;
 

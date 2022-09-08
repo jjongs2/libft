@@ -6,14 +6,14 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:16:16 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/23 05:25:42 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/09 01:53:22 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_string.h"
-#include "../../include/ft_malloc.h"
+#include "../../include/ft_stdlib.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*join;
 	size_t	s1_len;
