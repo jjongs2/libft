@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strspn.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 11:18:39 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/10 11:50:02 by kijsong          ###   ########.fr       */
+/*   Created: 2022/09/09 10:53:47 by kijsong           #+#    #+#             */
+/*   Updated: 2022/09/11 00:41:54 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_string.h"
-#include "../../include/ft_stdlib.h"
 
-char	*ft_strmapi(const char *s, char (*f)(size_t, char))
+size_t	ft_strspn(const char *s, const char *set)
 {
-	char	*map;
-	size_t	i;
+	const char	*p;
+	char		table[256];
 
-	if (!s || !f)
-		return (NULL);
-	map = ft_calloc(ft_strlen(s) + 1, sizeof(char));
-	if (!map)
-		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		map[i] = f(i, s[i]);
-		i++;
-	}
-	return (map);
+	ft_memset(table, 0, sizeof(table));
+	while (*set)
+		table[*(const unsigned char *)set++] = 1;
+	p = s;
+	while (*p && table[*(const unsigned char *)p])
+		p++;
+	return (p - s);
 }
