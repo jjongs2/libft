@@ -6,7 +6,7 @@
 #    By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/06 09:15:47 by kijsong           #+#    #+#              #
-#    Updated: 2022/09/11 01:19:16 by kijsong          ###   ########.fr        #
+#    Updated: 2022/09/12 22:19:45 by kijsong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ STRING	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_memchr.c \
 			ft_memcmp.c ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strspn.c \
 			ft_strcspn.c ft_strchr.c ft_strrchr.c ft_strstr.c ft_strnstr.c \
 			ft_strcmp.c ft_strncmp.c ft_strdup.c ft_substr.c ft_strjoin.c \
-			ft_strtrim.c ft_split.c ft_strmapi.c ft_striteri.c
+			ft_strtrim.c ft_strsep.c ft_strtok.c ft_split.c ft_strmapi.c \
+			ft_striteri.c
 
 SRC		=	$(addprefix ctype/, $(CTYPE)) $(addprefix malloc/, $(MALLOC)) \
 			$(addprefix stdio/, $(STDIO)) $(addprefix stdlib/, $(STDLIB)) \
