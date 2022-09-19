@@ -6,12 +6,12 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:16:16 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/19 13:09:34 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/20 02:39:56 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_string.h"
 #include "../../include/ft_stdlib.h"
+#include "../../include/ft_string.h"
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {

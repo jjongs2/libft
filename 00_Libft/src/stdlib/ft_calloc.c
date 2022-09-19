@@ -6,10 +6,11 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:14:09 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/23 05:19:34 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/20 02:51:23 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdint.h>
 #include <stdlib.h>
 #include "../../include/ft_string.h"
 

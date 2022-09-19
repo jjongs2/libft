@@ -6,12 +6,12 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:16:06 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/19 13:10:24 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/20 02:40:09 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_string.h"
 #include "../../include/ft_stdlib.h"
+#include "../../include/ft_string.h"
 
 char	*ft_substr(const char *s, size_t start, size_t len)
 {
