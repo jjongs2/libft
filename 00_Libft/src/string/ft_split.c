@@ -6,27 +6,25 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:16:30 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/19 13:08:12 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/20 02:09:32 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_stdlib.h"
 #include "../../include/ft_string.h"
 
-static size_t	ft_wordcnt(const char *s, char c)
+static size_t	ft_wordcnt(char *dup, const char *sep)
 {
 	size_t	cnt;
 
 	cnt = 0;
-	while (*s)
+	while (*dup)
 	{
-		while (*s == c)
-			s++;
-		if (!*s)
-			return (cnt);
+		dup += ft_strspn(dup, sep);
+		if (!*dup)
+			break ;
 		cnt++;
-		while (*s != c && *s)
-			s++;
+		dup += ft_strcspn(dup, sep);
 	}
 	return (cnt);
 }
@@ -39,36 +37,34 @@ static char	**ft_wordclr(char **split, size_t i)
 	return (NULL);
 }
 
-static char	**ft_wordgen(const char *s, char c, size_t cnt, char **split)
+static char	**ft_wordgen(char *dup, const char *sep, char **split)
 {
 	size_t	i;
-	char	*p;
+	char	*word;
 
 	i = 0;
-	while (i < cnt)
+	word = ft_strtok(dup, sep);
+	while (word)
 	{
-		while (*s == c)
-			s++;
-		p = ft_strchr(s, c);
-		if (!p)
-			p = ft_strchr(s, '\0');
-		split[i] = ft_substr(s, 0, p - s);
+		split[i] = ft_strdup(word);
 		if (!split[i])
 			return (ft_wordclr(split, i));
-		s = p;
 		i++;
+		word = ft_strtok(NULL, sep);
 	}
 	return (split);
 }
 
-char	**ft_split(const char *s, char c)
+char	**ft_split(const char *s, const char *sep)
 {
-	size_t	cnt;
 	char	**split;
+	char	*dup;
 
-	cnt = ft_wordcnt(s, c);
-	split = ft_calloc(cnt + 1, sizeof(char *));
+	dup = ft_strdup(s);
+	split = ft_calloc(ft_wordcnt(dup, sep) + 1, sizeof(char *));
 	if (!split)
 		return (NULL);
-	return (ft_wordgen(s, c, cnt, split));
+	split = ft_wordgen(dup, sep, split);
+	ft_free((void *)&dup);
+	return (split);
 }

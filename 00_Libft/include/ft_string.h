@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 09:29:49 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/12 22:49:16 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/19 17:38:34 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strtrim(const char *s, const char *set);
 char	*ft_strsep(char **stringp, const char *sep);
 char	*ft_strtok(char *s, const char *sep);
-char	**ft_split(const char *s, char c);
+char	**ft_split(const char *s, const char *sep);
 char	*ft_strmapi(const char *s, char (*f)(size_t, char));
 void	ft_striteri(char *s, void (*f)(size_t, char *));
 
