@@ -6,15 +6,13 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:18:56 by kijsong           #+#    #+#             */
-/*   Updated: 2022/07/06 11:18:57 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/19 14:19:21 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
-	if (fd < 0)
-		return ;
-	write(fd, &c, 1);
+	return (-(write(fd, &c, 1) < 0));
 }

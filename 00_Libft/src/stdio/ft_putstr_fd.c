@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:19:14 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/23 05:20:37 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/19 14:28:15 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 #include <limits.h>
 #include "../../include/ft_string.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int fd)
 {
 	size_t	rem;
 	size_t	len;
 	ssize_t	cnt;
 
-	if (!s || fd < 0)
-		return ;
 	rem = ft_strlen(s);
 	while (rem)
 	{
@@ -30,8 +28,9 @@ void	ft_putstr_fd(char *s, int fd)
 			len = SSIZE_MAX;
 		cnt = write(fd, s, len);
 		if (cnt < 0)
-			return ;
+			return (-1);
 		s += cnt;
 		rem -= cnt;
 	}
+	return (0);
 }
