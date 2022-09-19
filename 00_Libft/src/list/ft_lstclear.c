@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 09:30:43 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/23 20:52:12 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/19 13:02:38 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*cur;
+	t_list	*next;
 
-	if (!lst || !*lst || !del)
-		return ;
 	while (*lst)
 	{
-		cur = *lst;
-		*lst = (*lst)->next;
-		ft_lstdelone(cur, del);
+		next = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = next;
 	}
 }

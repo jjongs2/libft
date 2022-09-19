@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 09:30:51 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/23 20:52:22 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/19 13:01:45 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new;
 	void	*new_content;
 
-	if (!lst || !f)
-		return (NULL);
 	map = NULL;
 	while (lst)
 	{

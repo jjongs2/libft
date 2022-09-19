@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:16:06 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/09 02:09:08 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/19 13:10:24 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_substr(const char *s, size_t start, size_t len)
 	char	*sub;
 	size_t	s_len;
 
-	if (!s)
-		return (NULL);
 	s_len = ft_strlen(s);
 	if (s_len <= start)
 		return (ft_calloc(1, sizeof(char)));

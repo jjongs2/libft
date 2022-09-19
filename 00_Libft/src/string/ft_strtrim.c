@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 10:34:06 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/11 01:11:33 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/19 13:10:18 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strtrim(const char *s, const char *set)
 	size_t	len;
 	char	table[256];
 
-	if (!s || !set)
-		return (NULL);
 	ft_memset(table, 0, sizeof(table));
 	while (*set)
 		table[*(const unsigned char *)set++] = 1;

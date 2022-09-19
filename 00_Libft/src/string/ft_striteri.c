@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:18:46 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/14 20:18:59 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/19 13:09:30 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_striteri(char *s, void (*f)(size_t, char *))
 {
 	size_t	i;
 
-	if (!s || !f)
-		return ;
 	i = 0;
 	while (s[i])
 	{

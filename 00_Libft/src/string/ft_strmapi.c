@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:18:39 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/10 11:50:02 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/19 13:09:57 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strmapi(const char *s, char (*f)(size_t, char))
 	char	*map;
 	size_t	i;
 
-	if (!s || !f)
-		return (NULL);
 	map = ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	if (!map)
 		return (NULL);

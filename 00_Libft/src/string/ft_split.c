@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:16:30 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/09 01:53:22 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/19 13:08:12 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ char	**ft_split(const char *s, char c)
 	size_t	cnt;
 	char	**split;
 
-	if (!s)
-		return (NULL);
 	cnt = ft_wordcnt(s, c);
 	split = ft_calloc(cnt + 1, sizeof(char *));
 	if (!split)

@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 09:30:30 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/23 20:52:19 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/09/19 13:01:12 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst)
-		return (NULL);
 	while (lst->next)
 		lst = lst->next;
 	return (lst);
