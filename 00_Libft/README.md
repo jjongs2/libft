@@ -18,7 +18,7 @@
 ### [Bonus part](#Bonus-part-1)
 
 - [연결 리스트에서 이중 포인터를 사용하는 이유](#연결-리스트에서-이중-포인터를-사용하는-이유)
-- [bonus 규칙의 relink 방지](#bonus-규칙의-relink-방지)
+- [bonus 규칙의 불필요한 relink 방지](#bonus-규칙의-relink-방지)
 
 <br/>
 
@@ -68,7 +68,7 @@ typedef __SIZE_TYPE__ size_t;
 
 > [`ft_free()`](./src/malloc/ft_free.c)
 
-댕글링 포인터란 이미 할당이 해제된 메모리와 같이 유효하지 않은 객체를 가리키는 포인터를 의미한다.  
+*댕글링 포인터*란 이미 할당이 해제된 메모리와 같이 유효하지 않은 객체를 가리키는 포인터를 의미한다.  
 댕글링 포인터를 역참조하는 경우 엉뚱한 데이터에 접근하게 될 가능성이 있기 때문에,  
 이를 방지하기 위해 `free()` 함수를 통해 메모리 할당을 해제한 뒤 해당 포인터를 `NULL` 포인터로 초기화한다.
 
@@ -105,16 +105,16 @@ re:
 호출한 함수에서 변수의 원래 값을 변경하고자 할 때 변수의 주소값을 인자로 전달한 뒤 호출한 함수 내부에서 포인터를 이용하는 것과 마찬가지로,  
 포인터 변수의 원래 값을 변경하기 위해 이중 포인터를 활용한다.
 
-## bonus 규칙의 relink 방지
+## bonus 규칙의 불필요한 relink 방지
 
 > [`Makefile`](./Makefile)
 
-Relink란 `make` 시 소스 파일이 변경되지 않았음에도 불구하고 오브젝트 파일과 실행 파일이 갱신되는 것을 말한다.  
-Dependency는 변경 여부를 자동으로 확인해 주기 때문에 신경 쓸 필요가 없지만,  
-command의 경우 단지 명령어를 실행할 뿐이기 때문에 따로 relink를 방지해 주어야 한다.  
-올바르게 relink가 방지되었다면 `make bonus`를 한 번 수행한 뒤 다시 입력했을 때 아래와 같은 메시지가 출력된다.
+*불필요한 relink*란 `make`를 통한 link 과정에서 dependency가 변경되지 않았음에도 불구하고 target이 갱신되는 것을 말한다.  
+`make` 시 prerequisite은 변경 여부를 자동으로 확인해 주기 때문에 신경 쓸 필요가 없지만,  
+recipe는 단지 명령어를 실행할 뿐이기 때문에 따로 불필요한 relink를 방지해 주어야 한다.  
+불필요한 relink가 올바르게 방지된 경우 `make bonus`를 한 번 수행한 뒤 다시 입력했을 때 아래와 유사한 메시지가 출력된다.
 
 ```shell
 $ make bonus
-make[1]: Nothing to be done for 'all'.
+make: Nothing to be done for 'bonus'.
 ```
