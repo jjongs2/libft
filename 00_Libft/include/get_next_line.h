@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stdio.h                                         :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/23 09:29:44 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/29 22:17:26 by kijsong          ###   ########.fr       */
+/*   Created: 2022/07/18 10:54:05 by kijsong           #+#    #+#             */
+/*   Updated: 2022/09/28 23:52:37 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STDIO_H
-# define FT_STDIO_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int		ft_putchar_fd(char c, int fd);
-int		ft_putstr_fd(char *s, int fd);
-int		ft_putendl_fd(char *s, int fd);
-int		ft_putnbr_fd(int n, int fd);
-char	*get_next_line(int fd);
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4096
+# endif
+
+typedef struct s_line
+{
+	char	*str;
+	char	*old_str;
+	size_t	old_len;
+	size_t	new_len;
+	ssize_t	read_cnt;
+	int		lf;
+}			t_line;
 
 #endif

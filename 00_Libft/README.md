@@ -18,7 +18,7 @@
 ### [Bonus part](#Bonus-part-1)
 
 - [연결 리스트에서 이중 포인터를 사용하는 이유](#연결-리스트에서-이중-포인터를-사용하는-이유)
-- [bonus 규칙의 불필요한 relink 방지](#bonus-규칙의-relink-방지)
+- [bonus 규칙의 불필요한 relink 방지](#bonus-규칙의-불필요한-relink-방지)
 
 <br/>
 
@@ -29,11 +29,11 @@
 > 
 > Version: 15
 
-| Program name      | libft.a                                                                                           |
-| ----------------- | ------------------------------------------------------------------------------------------------- |
-| **Turn in files** | Makefile, libft.h, ft_*.c                                                                         |
-| **Makefile**      | NAME, all, clean, fclean, re                                                                      |
-| **Description**   | Write your own library:<br/>a collection of functions that will be a useful tool for your cursus. |
+|                  | Requirement                                                                                       |
+| ---------------- | ------------------------------------------------------------------------------------------------- |
+| **Program name** | libft.a                                                                                           |
+| **Makefile**     | NAME, all, clean, fclean, re                                                                      |
+| **Description**  | Write your own library:<br/>a collection of functions that will be a useful tool for your cursus. |
 
 <br/>
 
