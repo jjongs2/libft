@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 10:53:58 by kijsong           #+#    #+#             */
-/*   Updated: 2022/10/01 17:32:27 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/10/02 00:45:00 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ static void	ft_get_line(t_line *line, char buf[])
 char	*get_next_line(int fd)
 {
 	t_line		line;
-	static char	buf[BUFFER_SIZE + 1];
+	static char	buf[BUF_SIZE + 1];
 
-	if (BUFFER_SIZE <= 0)
+	if (BUF_SIZE <= 0)
 		return (NULL);
 	ft_memset(&line, 0, sizeof(line));
 	line.str = ft_calloc(1, 1);
@@ -48,14 +48,14 @@ char	*get_next_line(int fd)
 	ft_get_line(&line, buf);
 	while (!line.lf && line.str)
 	{
-		ft_memset(buf, 0, BUFFER_SIZE);
-		line.read_cnt = read(fd, buf, BUFFER_SIZE);
+		ft_memset(buf, 0, BUF_SIZE);
+		line.read_cnt = read(fd, buf, BUF_SIZE);
 		if (line.read_cnt == 0 && *line.str)
 			return (line.str);
 		if (line.read_cnt <= 0)
 			return (ft_free((void *)&line.str));
 		ft_get_line(&line, buf);
 	}
-	ft_memcpy(buf, buf + line.new_len, BUFFER_SIZE - line.new_len + 1);
+	ft_memcpy(buf, buf + line.new_len, BUF_SIZE - line.new_len + 1);
 	return (line.str);
 }

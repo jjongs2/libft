@@ -6,15 +6,15 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 10:54:05 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/28 23:52:37 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/10/02 00:45:15 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4096
+# ifndef BUF_SIZE
+#  define BUF_SIZE 4096
 # endif
 
 typedef struct s_line
