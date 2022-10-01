@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 10:53:58 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/28 23:41:34 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/10/01 17:32:27 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,11 @@ static void	ft_get_line(t_line *line, char buf[])
 		line->new_len++;
 	}
 	line->str = ft_calloc(1, line->old_len + line->new_len + 1);
-	ft_memcpy(line->str, line->old_str, line->old_len);
-	ft_memcpy(line->str + line->old_len, buf, line->new_len);
+	if (line->str)
+	{
+		ft_memcpy(line->str, line->old_str, line->old_len);
+		ft_memcpy(line->str + line->old_len, buf, line->new_len);
+	}
 	ft_free((void *)&line->old_str);
 }
 
@@ -40,11 +43,15 @@ char	*get_next_line(int fd)
 		return (NULL);
 	ft_memset(&line, 0, sizeof(line));
 	line.str = ft_calloc(1, 1);
+	if (!line.str)
+		return (NULL);
 	ft_get_line(&line, buf);
-	while (!line.lf)
+	while (!line.lf && line.str)
 	{
 		ft_memset(buf, 0, BUFFER_SIZE);
 		line.read_cnt = read(fd, buf, BUFFER_SIZE);
+		if (line.read_cnt == 0 && *line.str)
+			return (line.str);
 		if (line.read_cnt <= 0)
 			return (ft_free((void *)&line.str));
 		ft_get_line(&line, buf);
