@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 09:29:46 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/08 13:36:50 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/10/02 22:01:03 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stddef.h>
 
 int		ft_atoi(const char *str);
-char	*ft_itoa(int n);
+char	*ft_itoa(int n, char *buf, int base);
 
 void	*ft_calloc(size_t count, size_t size);
 void	*ft_free(void **p);

@@ -6,7 +6,7 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:19:31 by kijsong           #+#    #+#             */
-/*   Updated: 2022/10/02 02:12:48 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/10/02 22:01:57 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,8 @@
 
 int	ft_putnbr_fd(int n, int fd)
 {
-	int		ret;
-	char	*s;
+	char	buf[12];
 
-	s = ft_itoa(n);
-	if (!s)
-		return (-1);
-	ret = ft_putstr_fd(s, fd);
-	ft_free((void *)&s);
-	return (ret);
+	ft_itoa(n, buf, 10);
+	return (ft_putstr_fd(buf, fd));
 }

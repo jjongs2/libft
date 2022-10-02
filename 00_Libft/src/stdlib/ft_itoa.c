@@ -6,44 +6,46 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:18:29 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/09 01:46:35 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/10/03 00:07:00 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_stdlib.h"
-
-static int	ft_nbrlen(int n)
+static int	ft_numlen(long long num, int base)
 {
 	int	len;
 
-	len = (n == 0);
-	while (n)
+	len = (num == 0);
+	while (num)
 	{
 		len++;
-		n /= 10;
+		num /= base;
 	}
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int n, char *buf, int base)
 {
-	char		*str;
+	const char	digits[36] = "0123456789abcdefghijklmnopqrstuvwxyz";
+	long long	num;
 	int			len;
-	long long	abs;
 
-	len = (n < 0) + ft_nbrlen(n);
-	str = ft_calloc(len + 1, sizeof(char));
-	if (!str)
-		return (NULL);
-	abs = (long long)n * ((n > 0) - (n < 0));
-	while (abs)
+	num = n;
+	if (base != 10 && num < 0)
+		num = (unsigned)n;
+	len = ft_numlen(num, base);
+	if (num < 0)
 	{
-		str[--len] = abs % 10 + '0';
-		abs /= 10;
+		len++;
+		num *= -1;
+		buf[0] = '-';
 	}
-	if (n < 0)
-		str[0] = '-';
-	else if (n == 0)
-		str[0] = '0';
-	return (str);
+	else if (num == 0)
+		buf[0] = '0';
+	buf[len] = '\0';
+	while (num)
+	{
+		buf[--len] = digits[num % base];
+		num /= base;
+	}
+	return (buf);
 }
