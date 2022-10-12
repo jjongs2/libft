@@ -6,28 +6,28 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:09:33 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/19 13:08:01 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/10/12 11:46:11 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*d;
 	const unsigned char	*s;
 
-	d = dst;
+	d = dest;
 	s = src;
 	if (d < s)
 	{
-		while (len--)
+		while (n--)
 			*d++ = *s++;
 	}
 	else
 	{
-		while (len--)
-			d[len] = s[len];
+		while (n--)
+			d[n] = s[n];
 	}
-	return (dst);
+	return (dest);
 }

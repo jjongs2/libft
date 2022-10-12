@@ -6,24 +6,24 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:04:30 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/03 00:52:58 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/10/12 11:53:27 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_string.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	s2_len;
+	size_t	little_len;
 
-	if (!*s2)
-		return ((char *)s1);
-	s2_len = ft_strlen(s2);
-	while (*s1 && s2_len <= n--)
+	if (!*little)
+		return ((char *)big);
+	little_len = ft_strlen(little);
+	while (*big && little_len <= len--)
 	{
-		if (!ft_strncmp(s1, s2, s2_len))
-			return ((char *)s1);
-		s1++;
+		if (!ft_strncmp(big, little, little_len))
+			return ((char *)big);
+		big++;
 	}
 	return (NULL);
 }

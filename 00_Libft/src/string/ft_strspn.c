@@ -6,20 +6,20 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 10:53:47 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/11 00:41:54 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/10/12 11:47:25 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_string.h"
 
-size_t	ft_strspn(const char *s, const char *set)
+size_t	ft_strspn(const char *s, const char *accept)
 {
 	const char	*p;
 	char		table[256];
 
 	ft_memset(table, 0, sizeof(table));
-	while (*set)
-		table[*(const unsigned char *)set++] = 1;
+	while (*accept)
+		table[*(const unsigned char *)accept++] = 1;
 	p = s;
 	while (*p && table[*(const unsigned char *)p])
 		p++;

@@ -6,18 +6,18 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 09:36:46 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/04 13:38:19 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/10/12 11:44:55 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*p;
 
-	p = b;
-	while (len--)
+	p = s;
+	while (n--)
 		*p++ = c;
-	return (b);
+	return (s);
 }
