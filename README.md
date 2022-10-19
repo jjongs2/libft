@@ -1,6 +1,45 @@
-# 42 C Library (libft)
+<h1 align="center">42 C Library (libft)</h1>
 
-> Your very first own library
+<p align="center"><strong>Your very first own library</strong></p>
+
+<div align="center">
+  <strong>
+    <a href="https://github.com/jjongs2/libft#summary">Summary</a> |
+    <a href="https://jjongs2.github.io/42-C-Library/libft/">Manual</a> |
+    <a href="https://github.com/jjongs2/libft#getting-started">Getting Started</a> |
+    <a href="https://github.com/jjongs2/libft#tree">Tree</a>
+  </strong>
+</div>
+
+<br/>
+
+## Summary
+
+> This project is about coding a C Library.  
+> It will contain a lot of general purpose functions your programs will rely upon.
+
+|                  | Requirement                                                                                       |
+| ---------------- | ------------------------------------------------------------------------------------------------- |
+| **Program name** | libft.a                                                                                           |
+| **Makefile**     | `NAME`, `all`, `clean`, `fclean`, `re`                                                            |
+| **Description**  | Write your own library:<br/>a collection of functions that will be a useful tool for your cursus. |
+
+<br/>
+
+## Getting Started
+
+```shell
+# Download libft
+$ git clone https://github.com/jjongs2/libft.git
+$ cd libft
+
+# Build libft
+$ make
+```
+
+<br/>
+
+## Tree
 
 ```shell
 libft
