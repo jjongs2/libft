@@ -20,7 +20,7 @@
 
 |                  | Requirement                                                                                       |
 | ---------------- | ------------------------------------------------------------------------------------------------- |
-| **Program name** | libft.a                                                                                           |
+| **Program name** | `libft.a`                                                                                         |
 | **Makefile**     | `NAME`, `all`, `clean`, `fclean`, `re`                                                            |
 | **Description**  | Write your own library:<br/>a collection of functions that will be a useful tool for your cursus. |
 
@@ -36,6 +36,8 @@ $ cd libft
 # Build libft
 $ make
 ```
+
+These instructions assume that `cc` and `make` are installed.
 
 <br/>
 
