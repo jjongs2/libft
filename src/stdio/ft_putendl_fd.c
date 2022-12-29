@@ -6,12 +6,12 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:19:24 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/19 14:22:15 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/12/30 04:01:26 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "../../include/ft_stdio.h"
+#include "ft_stdio.h"
 
 int	ft_putendl_fd(char *s, int fd)
 {

@@ -6,11 +6,11 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:17:22 by kijsong           #+#    #+#             */
-/*   Updated: 2022/10/14 09:34:31 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/12/30 04:01:26 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_string.h"
+#include "ft_string.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {

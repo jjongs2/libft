@@ -6,12 +6,12 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:16:30 by kijsong           #+#    #+#             */
-/*   Updated: 2022/10/12 11:57:40 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/12/30 04:01:26 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_stdlib.h"
-#include "../../include/ft_string.h"
+#include "ft_stdlib.h"
+#include "ft_string.h"
 
 static size_t	ft_wordcnt(char *dup, const char *delim)
 {

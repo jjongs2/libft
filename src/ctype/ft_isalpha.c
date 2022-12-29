@@ -6,11 +6,11 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 10:36:51 by kijsong           #+#    #+#             */
-/*   Updated: 2022/08/23 04:40:31 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/12/30 04:01:26 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_ctype.h"
+#include "ft_ctype.h"
 
 int	ft_isalpha(int c)
 {

@@ -6,11 +6,11 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 11:57:05 by kijsong           #+#    #+#             */
-/*   Updated: 2022/10/12 11:56:03 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/12/30 04:01:26 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_string.h"
+#include "ft_string.h"
 
 char	*ft_strtok(char *str, const char *delim)
 {

@@ -6,12 +6,12 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:19:31 by kijsong           #+#    #+#             */
-/*   Updated: 2022/10/02 22:01:57 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/12/30 04:01:26 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_stdio.h"
-#include "../../include/ft_stdlib.h"
+#include "ft_stdio.h"
+#include "ft_stdlib.h"
 
 int	ft_putnbr_fd(int n, int fd)
 {

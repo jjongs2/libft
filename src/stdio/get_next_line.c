@@ -6,14 +6,14 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 10:53:58 by kijsong           #+#    #+#             */
-/*   Updated: 2022/10/02 00:45:00 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/12/30 04:01:26 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "../../include/ft_stdlib.h"
-#include "../../include/ft_string.h"
-#include "../../include/get_next_line.h"
+#include "ft_stdlib.h"
+#include "ft_string.h"
+#include "get_next_line.h"
 
 static void	ft_get_line(t_line *line, char buf[])
 {

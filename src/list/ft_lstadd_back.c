@@ -6,11 +6,11 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 09:30:20 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/19 12:59:40 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/12/30 04:01:26 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_list.h"
+#include "ft_list.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

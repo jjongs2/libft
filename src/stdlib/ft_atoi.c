@@ -6,11 +6,11 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:12:30 by kijsong           #+#    #+#             */
-/*   Updated: 2022/10/12 11:38:26 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/12/30 04:01:26 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_ctype.h"
+#include "ft_ctype.h"
 
 int	ft_atoi(const char *nptr)
 {

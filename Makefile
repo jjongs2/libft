@@ -6,7 +6,7 @@
 #    By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/06 09:15:47 by kijsong           #+#    #+#              #
-#    Updated: 2022/09/28 23:59:11 by kijsong          ###   ########.fr        #
+#    Updated: 2022/12/30 04:47:46 by kijsong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ CFLAGS = -Wall -Wextra -Werror -MMD -MP
 ARFLAGS = rcs
 
 SRCDIR = ./src
+INCDIR = ./include
 OBJDIR = ./obj
 
 CTYPE = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_isdigit.c \
@@ -39,6 +40,7 @@ SRC_B = $(LIST)
 SRCS = $(SRC) $(if $(filter bonus,$(MAKECMDGOALS)),$(SRC_B))
 OBJS = $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
 DEPS = $(OBJS:.o=.d)
+JSON = compile_commands.json
 
 .DEFAULT_GOAL = all
 
@@ -50,6 +52,7 @@ bonus: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(AR) $(ARFLAGS) $@ $^
+	@(echo '[' && cat $(OBJDIR)/*.part.json && echo ']') > $(JSON)
 
 $(OBJS): | $(OBJDIR)
 
@@ -57,10 +60,11 @@ $(OBJDIR):
 	mkdir -p $@
 
 $(OBJDIR)/%.o: $(SRCDIR)/*/%.c
-	$(CC) -c $(CFLAGS) -o $@ $<
+	$(CC) -I$(INCDIR) $(CFLAGS) -c -o $@ $< -MJ $@.part.json
 
 clean:
 	rm -rf $(OBJDIR)
+	$(RM) $(JSON)
 
 fclean:
 	$(MAKE) -s clean

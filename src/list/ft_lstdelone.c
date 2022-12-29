@@ -6,12 +6,12 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 09:30:45 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/19 13:00:51 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/12/30 04:01:26 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_list.h"
-#include "../../include/ft_stdlib.h"
+#include "ft_list.h"
+#include "ft_stdlib.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {

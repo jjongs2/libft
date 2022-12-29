@@ -6,12 +6,12 @@
 /*   By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:18:39 by kijsong           #+#    #+#             */
-/*   Updated: 2022/09/20 02:40:02 by kijsong          ###   ########.fr       */
+/*   Updated: 2022/12/30 04:01:26 by kijsong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_stdlib.h"
-#include "../../include/ft_string.h"
+#include "ft_stdlib.h"
+#include "ft_string.h"
 
 char	*ft_strmapi(const char *s, char (*f)(size_t, char))
 {
