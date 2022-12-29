@@ -6,7 +6,7 @@
 #    By: kijsong <kijsong@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/06 09:15:47 by kijsong           #+#    #+#              #
-#    Updated: 2022/12/30 04:47:46 by kijsong          ###   ########.fr        #
+#    Updated: 2022/12/30 04:49:05 by kijsong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ ARFLAGS = rcs
 
 SRCDIR = ./src
 INCDIR = ./include
-OBJDIR = ./obj
+TMPDIR = ./tmp
 
 CTYPE = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_isdigit.c \
 		ft_islower.c ft_isprint.c ft_isspace.c ft_isupper.c ft_tolower.c \
@@ -38,7 +38,7 @@ SRC = $(CTYPE) $(STDIO) $(STDLIB) $(STRING)
 SRC_B = $(LIST)
 
 SRCS = $(SRC) $(if $(filter bonus,$(MAKECMDGOALS)),$(SRC_B))
-OBJS = $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
+OBJS = $(addprefix $(TMPDIR)/,$(SRCS:.c=.o))
 DEPS = $(OBJS:.o=.d)
 JSON = compile_commands.json
 
@@ -52,18 +52,18 @@ bonus: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(AR) $(ARFLAGS) $@ $^
-	@(echo '[' && cat $(OBJDIR)/*.part.json && echo ']') > $(JSON)
+	@(echo '[' && cat $(TMPDIR)/*.part.json && echo ']') > $(JSON)
 
-$(OBJS): | $(OBJDIR)
+$(OBJS): | $(TMPDIR)
 
-$(OBJDIR):
+$(TMPDIR):
 	mkdir -p $@
 
-$(OBJDIR)/%.o: $(SRCDIR)/*/%.c
+$(TMPDIR)/%.o: $(SRCDIR)/*/%.c
 	$(CC) -I$(INCDIR) $(CFLAGS) -c -o $@ $< -MJ $@.part.json
 
 clean:
-	rm -rf $(OBJDIR)
+	rm -rf $(TMPDIR)
 	$(RM) $(JSON)
 
 fclean:
